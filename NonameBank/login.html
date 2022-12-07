@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>NonameBank | Вход</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>NonameBank</h1>
+    </header>
+
+    <div class="auth-form-wrapper" id="login-form-wrapper">
+        <span class="auth-title">Вход</span>
+        <span id="auth-submit-result" style="display: none;"></span>
+        <form id="auth-form">
+            <div class="input-wrapper">
+                <input type="radio" checked name="client-type" id="input-client-type-phys">
+                <label>Физическое лицо</label>
+                <input type="radio" name="client-type" id="input-client-type-jur">
+                <label>Юридическое лицо</label>
+            </div>
+
+
+            <div id="input-grid">
+                <label class="input-jur" id="input-hint-inn">ИНН организации</label>
+                <input class="input-jur" type="text" required maxlength="10" placeholder="0123456789" id="input-inn" name="Inn">
+
+                <label class="input-phys" id="input-hint-phone">Номер телефона</label>
+                <input class="input-phys" type="text" required maxlength="12" placeholder="+7" id="input-phone" name="Phone">
+
+                <label id="input-hint-password">Пароль</label>
+                <input type="password" required maxlength="64" id="input-password" name="pswd">
+
+                <input class="btn-cancel btn-auth-cancel" type="button" value="Назад" id="btn-login-cancel">
+                <input type="button" class="btn-auth-submit" value="Войти" id="btn-login-submit">
+            </div>
+        </form>
+    </div>
+
+    <script src="scripts/authLogin.js"></script>
+</body>
+
+</html>

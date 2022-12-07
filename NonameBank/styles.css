@@ -1,0 +1,820 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --header-background: #B42424;
+    --header-text-color: #eee;
+    --body-background: #f5f5f5;
+
+    --btn-credit-type-default: white;
+    --btn-credit-type-hover: #d1d1d1;
+    --btn-credit-type-weight-active: 600;
+    --btn-credit-type-weight-default: 500;
+
+    --btn-login-default: #E1E1E1;
+    --btn-login-hover: #F5F5F5;
+    --btn-login-pressed: #FFFFFF;
+
+    --btn-register-default: #FFB7AD;
+    --btn-register-hover: #FFD3CD;
+    --btn-register-pressed: #FFE7E3;
+
+    --btn-credit-subtype-selected: #B42424;
+    --btn-credit-subtype-selected-text: #f5f5f5;
+    --btn-credit-subtype-default: #eee;
+    --btn-credit-subtype-default-text: #333;
+    --btn-credit-subtype-default-hover: #de3131;
+
+    --calculator-wrapper-border: #e3e3e3;
+
+    --btn-credit-apply-background-disabled: #888;
+    --btn-credit-apply-background-enabled: #B42424;
+    --btn-credit-apply-background-hover: #de3131;
+    --btn-credit-apply-background-active: #f33636;
+
+    --btn-credit-confirm-background-default: #B42424;
+    --btn-credit-confirm-background-hover: #de3131;
+    --btn-credit-confirm-background-active: #f33636;
+
+    --btn-credit-cancel-background-default: #aaa;
+    --btn-credit-cancel-background-hover: #bbb;
+    --btn-credit-cancel-background-active: #ccc;
+
+    --btn-credit-pay-background-default: #b42424;
+    --btn-credit-pay-background-hover: #de3131;;
+    --btn-credit-pay-background-active: #f33636;
+}
+
+body {
+    background-color: var(--body-background);
+    margin-bottom: 150px;
+}
+
+header {
+    display: inline-flex;
+    width: 100%;
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+}
+
+h1 {
+    padding: 1em;
+    font-size: 250%;
+}
+
+#credit-type-selector-wrapper {
+    display: inline-flex;
+    margin: auto;
+    padding: 1em;
+}
+
+.btn-credit-type {
+    background: transparent;
+    font-size: 175%;
+    color: white;
+    border: none;
+    font-weight: var(--btn-credit-type-weight-default);
+}
+
+#btn-credit-type-phys:hover, #btn-credit-type-jur:hover {
+    color: var(--btn-credit-type-hover) !important;
+}
+
+#btn-credit-type-phys {
+    margin-right: 1em;
+    
+}
+
+#auth-btns-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 4em;
+}
+
+.btn-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 140%;
+    height: 1.8em;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+.btn-auth a:link {
+    color: black;
+    padding-top: 0.6em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-auth a:visited {
+    color: black;
+    padding-top: 0.6em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-auth a:hover {
+    color: black;
+    padding-top: 0.6em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-auth a:active {
+    color: black;
+    padding-top: 0.6em;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#btn-login {
+    width: 6vw;
+    margin-right: 1.5vw;
+    background-color: var(--btn-login-default);
+}
+
+#btn-login:hover {
+    background-color: var(--btn-login-hover);
+}
+
+#btn-login:active {
+    background-color: var(--btn-login-pressed);
+}
+
+#btn-register {
+    width: 12vw;
+    background-color: var(--btn-register-default);
+}
+
+#btn-register:hover {
+    background-color: var(--btn-register-hover);
+}
+
+#btn-register:active {
+    background-color: var(--btn-register-pressed);
+}
+
+#user-menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 4em;
+}
+
+#user-menu-wrapper span {
+    font-size: 150%;
+    margin-right: 2em;
+}
+
+.btn-user {
+    font-size: 140%;
+    height: 1.8em;
+    border-radius: 15px;
+    border: 1px solid #333;
+}
+
+#btn-my-credits {
+    width: 12em;
+    margin-right: 1.5vw;
+    background-color: var(--btn-login-default);
+}
+
+#btn-my-credits:hover {
+    background-color: var(--btn-login-hover);
+}
+
+#btn-my-credits:active {
+    background-color: var(--btn-login-pressed);
+}
+
+#btn-logout {
+    width: 5em;
+    background-color: var(--btn-register-default);
+}
+
+#btn-logout:hover {
+    background-color: var(--btn-register-hover);
+}
+
+#btn-logout:active {
+    background-color: var(--btn-register-pressed);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#credit-subtype-selector-wrapper {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3em;
+}
+
+.btn-credit-subtype {
+    width: 100%;
+    font-size: 175%;
+    padding: 0.5em;
+    background-color: var(--btn-credit-subtype-default);
+    color: var(--btn-credit-subtype-default-text);
+}
+
+/* Hover почему то не работает на весь класс, поэтому прописывается для каждой отдельной кнопки*/
+#credit-subtype-selector-wrapper button:hover {
+    background-color: var(--btn-credit-subtype-default-hover) !important;
+    /* !important чтобы JS не оверрайдил hover эффект при смене цвета кнопки*/
+    color: var(--btn-credit-subtype-selected-text) !important;
+}
+
+#credit-subtype-selector-wrapper button:first-child {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-right: none;
+}
+
+#credit-subtype-selector-wrapper button:nth-last-child(2) {
+    border-right: 2px solid black;
+}
+
+#credit-subtype-selector-wrapper button:last-child {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-left: none;
+}
+
+#credit-calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 500px;
+    height: 600px;
+    margin-top: 2em;
+    min-width: 60%;
+    border: 4px solid var(--calculator-wrapper-border);
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 200%;
+    font-weight: 500;
+    padding: 0.8em;
+}
+
+#credit-calculator-description {
+    width: 50%;
+    box-sizing: border-box;
+    font-size: 125%;
+    padding: 25.6px;
+    color: #333;
+}
+
+.credit-calculator-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 1em;
+    padding-top: 25.6px;
+    box-sizing: border-box;
+}
+
+.credit-calculator-input-above {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 1em;
+    padding: 0.6em;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    font-size: 140%;
+}
+
+.credit-calculator-input-above input[type="number"] {
+    font-size: 100%;
+    border: none;
+    display: none;
+    width: 112px;
+    background-color: #e1e1e1;
+}
+
+.credit-calculator-input-above input[type="number"]:focus {
+    outline: none;
+}
+
+.credit-calculator-input-above input[type=number]::-webkit-inner-spin-button, 
+.credit-calculator-input-above input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/************************************************************************/
+/* Стайлинг ползунков для выбора суммы/срока кредита (Чому так сложно?) */
+/************************************************************************/
+.calculator-input.slider-progress {
+    align-self: center;
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+/*progress support*/
+input[type=range].calculator-input.slider-progress {
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--value) - var(--min)) / var(--range));
+    --sx: calc(0.5 * 2em + var(--ratio) * (100% - 2em));
+  }
+  
+  input[type=range].calculator-input:focus {
+    outline: none;
+  }
+  
+  /*webkit*/
+  input[type=range].calculator-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 1em;
+    background: #FFFFFF;
+    border: none;
+    box-shadow: 0 0 2px black;
+    margin-top: calc(max((1em - 1px - 1px) * 0.5,0px) - 2em * 0.5);
+  }
+  
+  input[type=range].calculator-input::-webkit-slider-runnable-track {
+    height: 0.9em;
+    border: 1px solid #b2b2b2;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    background: #FFFFFF;
+    box-shadow: none;
+  }
+  
+  input[type=range].calculator-input::-webkit-slider-thumb:hover {
+    background: #FFFFFF;
+  }
+  
+  input[type=range].calculator-input:hover::-webkit-slider-runnable-track {
+    background: #e5e5e5;
+    border-color: #9a9a9a;
+  }
+  
+  input[type=range].calculator-input::-webkit-slider-thumb:active {
+    background: #FFFFFF;
+  }
+  
+  input[type=range].calculator-input:active::-webkit-slider-runnable-track {
+    background: #f5f5f5;
+    border-color: #c1c1c1;
+  }
+  
+  input[type=range].calculator-input.slider-progress::-webkit-slider-runnable-track {
+    background: linear-gradient(#B42424,#B42424) 0/var(--sx) 100% no-repeat, #FFFFFF;
+  }
+  
+  input[type=range].calculator-input.slider-progress:hover::-webkit-slider-runnable-track {
+    background: linear-gradient(#B42424,#B42424) 0/var(--sx) 100% no-repeat, #e5e5e5;
+  }
+  
+  input[type=range].calculator-input.slider-progress:active::-webkit-slider-runnable-track {
+    background: linear-gradient(#D82A2A,#D82A2A) 0/var(--sx) 100% no-repeat, #f5f5f5;
+  }
+
+/************************************************************************/
+/************************************************************************/
+
+.credit-calculator-input-below {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 1em;
+    color: #555;
+    padding: 0.4em;
+}
+
+.column-break {
+    flex-basis: 100%;
+    width: 0;
+}
+
+#credit-calculator-output-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    font-size: 150%;
+    padding-top: 3em;
+}
+
+.calculator-output-hint {
+    color: #444;
+    font-size: 80%;
+}
+
+.calculator-output-result {
+    padding-top: 0.2em;
+    font-size: 130%;
+}
+
+#credit-interest-rate {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #444;
+}
+
+#btn-credit-apply {
+    position: relative;
+    margin-top: 3em;
+    height: 2em;
+    width: auto;
+    font-size: 100%;
+    border-radius: 15px;
+    border: 1px solid #333;
+    background-color: var(--btn-credit-apply-background-disabled);
+}
+
+#btn-credit-apply:hover {
+    background-color: var(--btn-credit-apply-background-hover) !important;
+}
+
+#btn-credit-apply:active {
+    background-color: var(--btn-credit-apply-background-active) !important;
+}
+
+#btn-credit-apply:before {
+    content: attr(auth-hint);
+    visibility: hidden;
+    font-size: 75%;
+    background-color: var(--body-background);
+    text-align: center;
+    color: black !important;
+
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 120%;
+}
+
+#btn-credit-apply:hover:before {
+    visibility: visible;
+}
+
+/***************************/
+/* СТРАНИЦА АУТЕНТИФИКАЦИИ */
+/***************************/
+
+.auth-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4em;
+    padding-left: 6em;
+}
+
+.auth-title {
+    font-size: 200%;
+}
+
+#auth-submit-result {
+    margin-top: 1em;
+    font-size: 175%;
+    color: #B42424;
+    font-weight: bold;
+}
+
+.auth-form-wrapper .input-wrapper {
+    margin-top: 2em;
+}
+
+#auth-form input[type="radio"] {
+    transform: scale(1.8);
+}
+
+#auth-form div:first-child label {
+    font-size: 150%;
+    margin-left: 0.4em;
+    margin-right: 2em;
+}
+
+#auth-form div label {
+    font-size: 150%;
+    margin-right: 1em;
+}
+
+#auth-form input[type="text"] {
+    font-size: 150%;
+    padding: 0.25em;
+    height: 1.25em;
+    border-radius: 10px;
+    border: 2px solid #888;
+}
+
+#auth-form input[type="password"] {
+    font-size: 150%;
+    padding: 0.25em;
+    height: 1.25em;
+    border-radius: 10px;
+    border: 2px solid #888;
+}
+
+#auth-form #input-phone {
+    letter-spacing: 3px;
+}
+
+#input-grid {
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: 20% 30%;
+    row-gap: 2em;
+    align-items: center;
+}
+
+.row-divisor {
+    grid-column: 1 / 3;
+    border-top: 2px solid #777;
+}
+
+.btn-auth-submit {
+    background-color: var(--btn-credit-subtype-selected);
+    color: var(--btn-credit-subtype-selected-text);
+    margin-top: 3em;
+    margin-left: 2em;
+    height: 60%;
+    width: 75%;
+    font-size: 150%;
+    border-radius: 25px;
+}
+
+.btn-auth-submit:hover {
+    background-color: var(--btn-credit-subtype-default-hover) !important;
+}
+
+.btn-auth-cancel {
+    margin-top: 3em;
+}
+
+#btn-signup-cancel {
+    border-radius: 25px;
+    height: 60%;
+}
+
+#btn-login-cancel {
+    border-radius: 25px;
+    height: 60%;
+}
+
+/**********************************/
+/* СТРАНИЦА ПОДТВЕРЖДЕНИЯ КРЕДИТА */
+/**********************************/
+
+#confirm-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+}
+
+#confirm-title {
+    font-size: 175%;
+}
+
+#confirm-result {
+    margin-top: 1em;
+    color: #B42424;
+    font-size: 180%;
+    font-weight: bold;
+}
+
+#data-wrapper {
+    display: grid;
+    column-gap: 2em;
+    grid-template-columns: 20% 25%;
+    font-size: 150%;
+}
+
+#data-wrapper div:first-child {
+    margin-top: 1.5em;
+}
+
+#data-wrapper div:nth-child(2) {
+    margin-top: 1.5em;
+}
+
+#data-wrapper div {
+    display: flex;
+    align-items: center;
+    font-size: 110%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.8em;
+}
+
+#confirm-btns-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    gap: 2em;
+}
+
+#btn-credit-confirm {
+    font-size: 150%;
+    width: 40%;
+    min-width: max-content;
+    height: 2em;
+    border-radius: 15px;
+    border: 2px solid #333;
+    background-color: var(--btn-credit-confirm-background-default);
+    color: #f5f5f5;
+}
+
+#btn-credit-confirm:hover {
+    background-color: var(--btn-credit-confirm-background-hover);
+}
+
+#btn-credit-confirm:active {
+    background-color: var(--btn-credit-confirm-background-active);
+}
+
+.btn-cancel {
+    font-size: 150%;
+    min-width: max-content;
+    height: 2em;
+    border-radius: 15px;
+    border: 2px solid #333;
+    background-color: var(--btn-credit-cancel-background-default);
+}
+
+.btn-cancel:hover {
+    background-color: var(--btn-credit-cancel-background-hover);
+}
+
+.btn-cancel:active {
+    background-color: var(--btn-credit-cancel-background-active);
+}
+
+#btn-credit-cancel {
+    width: 15%;
+}
+
+/******************************/
+/*   СТРАНИЦА "МОИ КРЕДИТЫ"   */
+/******************************/
+
+#btn-to-main {
+    width: 8em;
+    margin-right: 1.5vw;
+    background-color: var(--btn-login-default);
+}
+
+#btn-to-main:hover {
+    background-color: var(--btn-login-hover);
+}
+
+#btn-to-main:active {
+    background-color: var(--btn-login-pressed);
+}
+
+#credit-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+    width: 60%;
+    min-width: 900px;
+    font-size: 100%;
+    padding: 2em;
+    border: 4px solid var(--calculator-wrapper-border);
+    border-radius: 10px;
+}
+
+#credit-list-wrapper span:first-child {
+    font-size: 200%;
+}
+
+.credit-list-hint {
+    font-size: 130%;
+    color: #555;
+}
+
+#credit-selection-hint {
+    margin-top: 2em;
+}
+
+#credit-pay-hint {
+    margin-top: 4em;
+}
+
+.row-break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.credit-info-wrapper:first-child {
+    margin-top: 0.5em;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.credit-info-wrapper {
+    font-size: 150%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+    height: auto;
+    min-height: 2em;
+    border: 2px solid #777;
+    border-bottom: 0;
+    padding: 0.5em;
+}
+
+.credit-info-wrapper:last-child {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom: 2px solid #777;
+}
+
+.credit-info-wrapper:only-child {
+    margin-top: 1.5em;
+    border-radius: 20px;
+}
+
+#credit-pay-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-top: 1em;
+    font-size: 150%;
+}
+
+#credit-pay-menu input[type="number"]:valid {
+    height: 1.6em;
+    width: 160px;
+    font-size: 100%;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    border: 2px solid #555;
+    border-radius: 10px;
+}
+
+#credit-pay-menu input[type="number"]:invalid {
+    height: 1.6em;
+    width: 160px;
+    font-size: 100%;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    border: 4px solid red;
+    border-radius: 10px;
+}
+
+#credit-pay-menu input[type="number"]:focus {
+    outline: none;
+}
+
+#credit-pay-menu input[type=number]::-webkit-inner-spin-button, 
+#credit-pay-menu input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+#btn-pay {
+    position: absolute;
+    right: 0;
+    font-size: 100%;
+    height: 2em;
+    min-width: 270px;
+    border-radius: 15px;
+    border: 2px solid #333;
+    background-color: var(--btn-credit-pay-background-default);
+    color: #f5f5f5;
+}
+
+#btn-pay:hover {
+    background-color: var(--btn-credit-pay-background-hover) !important;
+}
+
+#btn-pay:active {
+    background-color: var(--btn-credit-pay-background-active) !important;
+}

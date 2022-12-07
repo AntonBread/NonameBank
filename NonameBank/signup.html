@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>NonameBank | Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>NonameBank</h1>
+    </header>
+
+    <div class="auth-form-wrapper" id="signup-form-wrapper">
+        <span class="auth-title">Регистрация</span>
+        <span id="auth-submit-result" style="display: none;"></span>
+        <form id="auth-form">
+            <div class="input-wrapper">
+                <input type="radio" checked name="client-type" id="input-client-type-phys">
+                <label>Физическое лицо</label>
+                <input type="radio" name="client-type" id="input-client-type-jur">
+                <label>Юридическое лицо</label>
+            </div>
+
+
+            <div id="input-grid">
+                <label id="input-hint-lastname">Фамилия</label>
+                <input class="input-name" type="text" required maxlength="32" placeholder="Иванов" id="input-lastname"
+                    name="Lastname">
+
+                <div class="row-divisor"></div>
+
+                <label id="input-hint-firstname">Имя</label>
+                <input class="input-name" type="text" required maxlength="32" placeholder="Иван" id="input-firstname"
+                    name="Firstname">
+
+                <div class="row-divisor"></div>
+
+                <label id="input-hint-patronymic">Отчество</label>
+                <input class="input-name" type="text" required maxlength="32" placeholder="Иванович"
+                    id="input-patronymic" name="Patronymic">
+
+                <div class="row-divisor"></div>
+
+                <label class="input-phys" id="input-hint-passport-num">Номер паспорта</label>
+                <input class="input-phys input-passport" type="text" maxlength="6" placeholder="123456"
+                    id="input-passport-num" name="PassNum">
+
+                <label class="input-jur" id="input-hint-inn" style="display: none;">ИНН организации</label>
+                <input class="input-jur" type="text" maxlength="10" placeholder="0123456789" style="display: none;"
+                    id="input-inn" name="Inn">
+
+                <div class="row-divisor"></div>
+
+                <label class="input-phys" id="input-hint-passport-serial">Серия паспорта</label>
+                <input class="input-phys input-passport" type="text" maxlength="4" placeholder="1234"
+                    id="input-passport-serial" name="PassSer">
+
+                <label class="input-jur" id="input-hint-orgname" style="display: none;">Полное название
+                    организации</label>
+                <input class="input-jur" type="text" maxlength="128" style="display: none;" id="input-orgname"
+                    name="Orgname">
+
+                <div class="row-divisor"></div>
+
+                <label id="input-hint-address-reg">Адрес регистрация</label>
+                <input class="input-addr" type="text" required maxlength="256" id="input-address-reg" name="AddrReg">
+
+                <div class="row-divisor"></div>
+
+                <label id="input-hint-address-fact">Адрес фактического проживания</label>
+                <input class="input-addr" type="text" required maxlength="256" id="input-address-fact" name="AddrFact">
+
+                <div class="row-divisor"></div>
+
+                <label id="input-hint-phone">Номер телефона</label>
+                <input type="text" required maxlength="12" placeholder="+7" id="input-phone" name="Phone">
+
+                <div class="row-divisor"></div>
+
+                <label id="input-hint-password">Пароль</label>
+                <input type="password" required maxlength="64" id="input-password" name="pswd">
+                <label id="input-hint-password-confirm">Подтвердите пароль</label>
+                <input type="password" required maxlength="64" id="input-password-confirm" name="pswdConfirm">
+
+                <input class="btn-cancel btn-auth-cancel" type="button" value="Назад" id="btn-signup-cancel">
+                <input type="button" class="btn-auth-submit" value="Зарегистрироваться" id="btn-signup-submit">
+            </div>
+        </form>
+    </div>
+
+    <script src="scripts/authSignup.js"></script>
+</body>
+
+</html>

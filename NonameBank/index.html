@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>NonameBank</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>NonameBank</h1>
+        <div id="credit-type-selector-wrapper">
+            <button class="btn-credit-type" id="btn-credit-type-phys">Частным лицам</button>
+            <button class="btn-credit-type" id="btn-credit-type-jur">Юридическим лицам</button>
+        </div>
+
+        <div id="auth-btns-wrapper" style="display: none;">
+            <div class="btn-auth" id="btn-login">
+                <a href="/login">Войти</a>
+            </div>
+            <div class="btn-auth" id="btn-register">
+                <a href="/signup">Регистрация</a>
+            </div>
+        </div>
+
+        <div id="user-menu-wrapper" style="display: none;">
+            <span id="user-greet"></span>
+            <button class="btn-user" id="btn-my-credits">Мои кредиты</button>
+            <button class="btn-user" id="btn-logout">Выйти</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="credit-subtype-selector-wrapper">
+            
+        </section>
+
+        <section id="credit-calculator-wrapper">
+            <h2>Калькулятор кредита</h2>
+            <div id="credit-calculator-description">
+                Подберите кредит, который нужен вам. Бла, бла, бла...
+            </div>
+
+            <div class="credit-calculator-input-wrapper" id="credit-calculator-input-sum-wrapper">
+                <div class="credit-calculator-input-above">
+                    <span>Сумма кредита</span>
+                    <div>
+                        <input type="number" id="calculator-manual-sum">
+                        <span id="credit-sum-amount"></span>
+                        <span>₽</span>
+                    </div>
+                </div>
+                <input type="range" class="calculator-input slider-progress" id="calculator-slider-sum" max="500">
+                <div class="credit-calculator-input-below">
+                    <span id="slider-sum-lower-bound-hint"></span>
+                    <span id="slider-sum-upper-bound-hint"></span>
+                </div>
+            </div>
+
+            <div class="credit-calculator-input-wrapper" id="credit-calculator-input-time-wrapper">
+                <div class="credit-calculator-input-above">
+                    <span>Срок кредита</span>
+                    <div>
+                        <input type="number" id="calculator-manual-time">
+                        <span id="manual-time-hint" style="display: none;"></span>
+                        <span id="credit-time-amount"></span>
+                    </div>
+                </div>
+                <input type="range" class="calculator-input slider-progress" id="calculator-slider-time" max="200">
+                <div class="credit-calculator-input-below">
+                    <span id="slider-time-lower-bound-hint"></span>
+                    <span id="slider-time-upper-bound-hint"></span>
+                </div>
+            </div>
+
+            <div class="column-break"></div>
+
+            <div id="credit-calculator-output-wrapper">
+                <span class="calculator-output-hint">Ставка</span>
+                <span class="calculator-output-result" id="credit-interest-rate"></span>
+                <br>
+                <span class="calculator-output-hint">Ежемесячный платёж</span>
+                <span class="calculator-output-result" id="credit-monthly-pay"></span>
+                <br>
+                <span class="calculator-output-hint">Сумма платежей</span>
+                <span class="calculator-output-result" id="credit-total-pay"></span>
+                <br>
+                <span class="calculator-output-hint">Переплата</span>
+                <span class="calculator-output-result" id="credit-over-pay"></span>
+
+
+                <button id="btn-credit-apply" disabled auth-hint="Необходима авторизация">Оформить кредит</button>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/calculator.js"></script>
+    <script src="scripts/slider.js"></script>
+</body>
+
+</html>
